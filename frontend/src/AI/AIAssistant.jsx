@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import "./AIAssistant.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "${import.meta.env.VITE_API_URL}";
 
 function AIAssistant() {
   const [isOpen, setIsOpen] = useState(false);

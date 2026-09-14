@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./VerifyCertificate.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "${import.meta.env.VITE_API_URL}";
 
 const VerifyCertificate = () => {
   const { certificateId } = useParams();

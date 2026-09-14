@@ -9,7 +9,7 @@ import * as XLSX from "xlsx";
 import "../AdminDashboard.css";
 import "./AdminQuestions.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "${import.meta.env.VITE_API_URL}";
 
 function AdminQuestions() {
   const navigate = useNavigate();

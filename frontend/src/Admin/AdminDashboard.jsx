@@ -78,7 +78,7 @@ function AdminDashboard() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/admin/stats",
+          "${import.meta.env.VITE_API_URL}/api/admin/stats",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -120,7 +120,7 @@ function AdminDashboard() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/admin/recent-results",
+          "${import.meta.env.VITE_API_URL}/api/admin/recent-results",
           {
             headers: {
               Authorization: `Bearer ${token}`,

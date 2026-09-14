@@ -245,7 +245,7 @@ function Home() {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/leaderboard");
+        const response = await fetch("${import.meta.env.VITE_API_URL}/api/leaderboard");
         const data = await response.json();
 
         if (!response.ok) {
@@ -833,7 +833,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/login",
+        "${import.meta.env.VITE_API_URL}/api/login",
         {
           method: "POST",
 
@@ -1519,7 +1519,7 @@ function TestPage() {
         setLoading(true);
 
         const response = await fetch(
-          `http://localhost:5000/api/tests/${id}`
+          `${import.meta.env.VITE_API_URL}/api/tests/${id}`
         );
 
         const data = await response.json();
@@ -1645,7 +1645,7 @@ function TestPage() {
         (Number(test?.duration) || 0) * 60 - timeLeft;
 
       const response = await fetch(
-        `http://localhost:5000/api/tests/${id}/submit`,
+        `${import.meta.env.VITE_API_URL}/api/tests/${id}/submit`,
         {
           method: "POST",
           headers: {
@@ -1908,7 +1908,7 @@ function ResultPage() {
     const fetchResult = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/results/${id}`
+          `${import.meta.env.VITE_API_URL}/api/results/${id}`
         );
 
         const data = await response.json();

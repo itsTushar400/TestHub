@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 import "./Certificate.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "${import.meta.env.VITE_API_URL}";
 
 const Certificate = () => {
   const { resultId } = useParams();

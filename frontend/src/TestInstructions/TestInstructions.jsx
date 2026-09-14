@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./TestInstructions.css";
 
-const API = "http://localhost:5000";
+const API = "${import.meta.env.VITE_API_URL}";
 
 function TestInstructions() {
   const { testId } = useParams();

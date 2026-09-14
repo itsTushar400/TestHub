@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
-const API = "http://localhost:5000/api";
+const API = "${import.meta.env.VITE_API_URL}/api";
 
 function Register() {
   const navigate = useNavigate();

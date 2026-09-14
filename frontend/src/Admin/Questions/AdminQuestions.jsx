@@ -3,7 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import * as XLSX from "xlsx";
 import "../AdminDashboard.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "${import.meta.env.VITE_API_URL}";
 
 function AdminQuestions() {
   const navigate = useNavigate();

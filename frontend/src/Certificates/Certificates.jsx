@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Certificates.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "${import.meta.env.VITE_API_URL}";
 
 function formatDate(value) {
   if (!value) return "—";
@@ -432,3 +432,4 @@ export default function Certificates() {
     </div>
   );
 }
+

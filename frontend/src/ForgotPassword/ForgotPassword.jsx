@@ -33,7 +33,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/forgot-password",
+        "${import.meta.env.VITE_API_URL}/api/forgot-password",
         {
           method: "POST",
           headers: {
@@ -88,7 +88,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/verify-otp",
+        "${import.meta.env.VITE_API_URL}/api/verify-otp",
         {
           method: "POST",
           headers: {
@@ -152,7 +152,7 @@ const ForgotPassword = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/reset-password",
+        "${import.meta.env.VITE_API_URL}/api/reset-password",
         {
           method: "POST",
           headers: {
