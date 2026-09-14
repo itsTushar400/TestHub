@@ -1,0 +1,1436 @@
+/* =====================================================
+   CERTIFICATE PAGE
+===================================================== */
+
+.certificate-page {
+  min-height: 100vh;
+
+  padding: 25px 30px 40px;
+
+  background: #eef2f7;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.certificate-controls {
+  width: min(1200px, 100%);
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.back-result-btn,
+.print-certificate-btn {
+  padding: 10px 17px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.back-result-btn {
+  background: white;
+
+  border: 1px solid #d6e0eb;
+
+  color: #27557f;
+}
+
+.print-certificate-btn {
+  background: #155eaa;
+
+  border: 1px solid #155eaa;
+
+  color: white;
+}
+
+/* =====================================================
+   CERTIFICATE HOLDER
+===================================================== */
+
+.certificate-holder {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+/* =====================================================
+   MAIN CERTIFICATE
+===================================================== */
+
+.certificate {
+  position: relative;
+
+  width: min(1200px, 100%);
+
+  aspect-ratio: 297 / 210;
+
+  background: #fff;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 45px rgba(19, 43, 72, 0.2);
+}
+
+/* =====================================================
+   GOLD BORDER
+===================================================== */
+
+.certificate-border {
+  position: absolute;
+
+  inset: 17px;
+
+  border: 2px solid #dbaa37;
+
+  z-index: 50;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   TOP CORNER
+===================================================== */
+
+.corner-top {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  left: -365px;
+  top: -365px;
+
+  border-radius: 50%;
+
+  background: #063c82;
+
+  z-index: 1;
+}
+
+.corner-top-gold {
+  position: absolute;
+
+  width: 480px;
+  height: 480px;
+
+  left: -338px;
+  top: -337px;
+
+  border-radius: 50%;
+
+  border: 18px solid #f2c348;
+
+  z-index: 2;
+}
+
+/* =====================================================
+   BOTTOM CORNER
+===================================================== */
+
+.corner-bottom {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -365px;
+  bottom: -365px;
+
+  border-radius: 50%;
+
+  background: #063c82;
+
+  z-index: 1;
+}
+
+.corner-bottom-gold {
+  position: absolute;
+
+  width: 475px;
+  height: 475px;
+
+  right: -337px;
+  bottom: -337px;
+
+  border-radius: 50%;
+
+  border: 15px solid #f2c348;
+
+  z-index: 2;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.online-test-logo {
+  position: absolute;
+
+  left: 72px;
+  top: 53px;
+
+  z-index: 60;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.logo-round {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 50%;
+
+  background: #1464b4;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 900;
+
+  font-size: 14px;
+}
+
+.logo-title {
+  color: #14559d;
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.logo-subtitle {
+  margin-top: 5px;
+
+  color: #8094ac;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.certificate-main {
+  position: absolute;
+
+  left: 155px;
+  right: 195px;
+
+  top: 70px;
+  bottom: 60px;
+
+  z-index: 20;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.certificate-main h1 {
+  margin: 0;
+
+  color: #102e5d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(45px, 5vw, 68px);
+
+  line-height: 1;
+
+  letter-spacing: 1px;
+}
+
+.completion-heading {
+  margin-top: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.completion-heading span {
+  width: 105px;
+
+  height: 2px;
+
+  background: #d8a52f;
+}
+
+.completion-heading h2 {
+  margin: 0;
+
+  color: #d19c26;
+
+  font-size: 21px;
+
+  letter-spacing: 2px;
+}
+
+/* =====================================================
+   PRESENTED
+===================================================== */
+
+.presented {
+  margin-top: 27px;
+
+  color: #55769a;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+/* =====================================================
+   STUDENT
+===================================================== */
+
+.student-name {
+  margin-top: 2px;
+
+  color: #125baa;
+
+  font-family:
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size: clamp(45px, 4.7vw, 65px);
+
+  line-height: 1.05;
+
+  white-space: nowrap;
+}
+
+.student-line {
+  width: 58%;
+
+  height: 1px;
+
+  margin-top: 5px;
+
+  background: #d6a52f;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.certificate-description {
+  margin-top: 14px;
+
+  color: #617a9a;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+/* =====================================================
+   TEST
+===================================================== */
+
+.test-title {
+  margin-top: 6px;
+
+  color: #155198;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   RESULTS
+===================================================== */
+
+.certificate-results {
+  margin-top: 19px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 45px;
+}
+
+.result-item {
+  min-width: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.result-item span {
+  color: #7189a4;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.result-item strong {
+  margin-top: 4px;
+
+  color: #155ba8;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+}
+
+.result-item.completed-date strong {
+  font-size: 15px;
+}
+
+.result-separator {
+  width: 1px;
+
+  height: 38px;
+
+  background: #d8dee6;
+}
+
+/* =====================================================
+   RIGHT STRIP
+===================================================== */
+
+.right-strip {
+  position: absolute;
+
+  top: 0;
+  right: 47px;
+
+  width: 88px;
+  height: 165px;
+
+  z-index: 70;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0a4b94,
+      #1264b4
+    );
+
+  border-left: 2px solid #e2b439;
+
+  border-right: 2px solid #e2b439;
+
+  text-align: center;
+}
+
+.strip-text {
+  margin-top: 20px;
+
+  color: #e3edfa;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+.strip-title {
+  margin-top: 6px;
+
+  color: #fff;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.strip-line {
+  width: 48px;
+
+  height: 2px;
+
+  margin: 11px auto;
+
+  background: #e5b83c;
+}
+
+/* =====================================================
+   RIBBON TAIL
+===================================================== */
+
+.strip-tail {
+  position: absolute;
+
+  left: -2px;
+  top: 130px;
+
+  width: 0;
+  height: 0;
+
+  border-left: 44px solid transparent;
+
+  border-right: 44px solid transparent;
+
+  border-top: 35px solid #1262b1;
+}
+
+/* =====================================================
+   VERIFIED SEAL
+===================================================== */
+
+.verified-seal {
+  position: absolute;
+
+  top: 86px;
+  right: 48px;
+
+  width: 88px;
+  height: 88px;
+
+  z-index: 100;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+.seal-gold {
+  width: 76px;
+  height: 76px;
+
+  border-radius: 50%;
+
+  border: 3px solid #d9a72f;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-blue {
+  width: 63px;
+  height: 63px;
+
+  border-radius: 50%;
+
+  border: 2px solid #175ba3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-star {
+  color: #d29f2c;
+
+  font-size: 11px;
+}
+
+.seal-verified {
+  margin-top: 2px;
+
+  color: #16549a;
+
+  font-size: 8px;
+
+  font-weight: 900;
+}
+
+.seal-certificate {
+  color: #657c99;
+
+  font-size: 5px;
+
+  letter-spacing: 0.5px;
+}
+
+.seal-check {
+  width: 18px;
+  height: 18px;
+
+  margin-top: 3px;
+
+  border-radius: 50%;
+
+  background: #17599f;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+/* =====================================================
+   SIGNATURE
+===================================================== */
+
+.signature-block {
+  position: absolute;
+
+  left: 78px;
+  bottom: 62px;
+
+  width: 190px;
+
+  z-index: 80;
+
+  text-align: center;
+}
+
+.signature-writing {
+  height: 30px;
+
+  color: #142f59;
+
+  font-family:
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size: 24px;
+}
+
+.signature-line {
+  width: 180px;
+
+  height: 1px;
+
+  background: #344f6c;
+}
+
+.signature-label {
+  margin-top: 5px;
+
+  color: #7d8fa5;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.signature-person {
+  margin-top: 2px;
+
+  color: #405674;
+
+  font-size: 8px;
+}
+
+/* =====================================================
+   ISSUED BY
+===================================================== */
+
+.issued-block {
+  position: absolute;
+
+  left: 48%;
+
+  bottom: 66px;
+
+  transform: translateX(-50%);
+
+  z-index: 80;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.issued-check {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  border: 2px solid #2269bb;
+
+  background: #f1f7ff;
+
+  color: #2269bb;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  font-weight: 900;
+}
+
+.issued-content {
+  display: flex;
+
+  flex-direction: column;
+
+  text-align: left;
+}
+
+.issued-content span {
+  color: #8192a7;
+
+  font-size: 8px;
+}
+
+.issued-content strong {
+  margin-top: 3px;
+
+  color: #17589f;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 12px;
+}
+
+/* =====================================================
+   REAL QR CODE
+===================================================== */
+
+.certificate-qr {
+  position: absolute;
+
+  right: 51px;
+  bottom: 49px;
+
+  z-index: 90;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+}
+
+/* Actual QR SVG */
+.certificate-qr svg {
+  display: block;
+
+  width: 90px;
+  height: 90px;
+
+  padding: 4px;
+
+  background: #ffffff;
+
+  border: 2px solid #172c48;
+
+  border-radius: 2px;
+}
+
+/* QR text */
+.certificate-qr > span {
+  color: #5f7691;
+
+  font-size: 6px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   CERTIFICATE ID
+===================================================== */
+
+.certificate-id {
+  position: absolute;
+
+  right: 58px;
+  bottom: 23px;
+
+  z-index: 150;
+
+  color: #7c8ea5;
+
+  font-size: 7px;
+
+  white-space: nowrap;
+}
+
+.certificate-id strong {
+  margin-left: 4px;
+
+  color: #304a67;
+}
+
+/* =====================================================
+   CERTIFICATE ID
+===================================================== */
+
+.certificate-id {
+  position: absolute;
+
+  right: 58px;
+  bottom: 23px;
+
+  z-index: 150;
+
+  color: #7c8ea5;
+
+  font-size: 7px;
+
+  white-space: nowrap;
+}
+
+.certificate-id strong {
+  margin-left: 4px;
+
+  color: #304a67;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.certificate-loading,
+.certificate-message {
+  width: 450px;
+
+  max-width: 100%;
+
+  margin: 100px auto;
+
+  padding: 40px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(20, 45, 75, 0.12);
+}
+
+.loading-circle {
+  width: 40px;
+  height: 40px;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  border: 4px solid #e3ebf4;
+
+  border-top-color: #1764b3;
+
+  animation: loading 0.8s linear infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.certificate-message h2 {
+  color: #193351;
+}
+
+.certificate-message p {
+  color: #74869b;
+
+  line-height: 1.6;
+}
+
+.certificate-message button {
+  margin-top: 15px;
+
+  padding: 11px 20px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #1764b3;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.message-icon {
+  font-size: 40px;
+
+  margin-bottom: 10px;
+}
+
+.pending-id {
+  margin: 20px 0;
+
+  padding: 12px;
+
+  background: #f3f7fc;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.pending-id span {
+  color: #7d8ea3;
+
+  font-size: 11px;
+}
+
+.pending-id strong {
+  color: #1c5ca6;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .certificate-page {
+    padding: 15px;
+  }
+
+  .certificate-controls {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .certificate-holder {
+    overflow-x: auto;
+
+    justify-content: flex-start;
+  }
+
+  .certificate {
+    min-width: 850px;
+  }
+}
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+
+  html,
+  body {
+    width: 297mm !important;
+    height: 210mm !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    background: #fff !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+
+    print-color-adjust: exact !important;
+  }
+
+  .certificate-page {
+    width: 297mm !important;
+    height: 210mm !important;
+
+    min-height: 0 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: #fff !important;
+
+    overflow: hidden !important;
+  }
+
+  .certificate-controls {
+    display: none !important;
+  }
+
+  .certificate-holder {
+    width: 297mm !important;
+    height: 210mm !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+
+    overflow: hidden !important;
+  }
+
+  .certificate {
+    width: 297mm !important;
+    height: 210mm !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    aspect-ratio: auto !important;
+
+    box-shadow: none !important;
+
+    overflow: hidden !important;
+  }
+
+  /* BORDER */
+
+  .certificate-border {
+    inset: 4mm !important;
+
+    border-width: 0.5mm !important;
+  }
+
+  /* CORNERS */
+
+  .corner-top {
+    width: 130mm;
+    height: 130mm;
+
+    left: -91mm;
+    top: -91mm;
+  }
+
+  .corner-top-gold {
+    width: 120mm;
+    height: 120mm;
+
+    left: -84mm;
+    top: -84mm;
+
+    border-width: 4.5mm;
+  }
+
+  .corner-bottom {
+    width: 130mm;
+    height: 130mm;
+
+    right: -91mm;
+    bottom: -91mm;
+  }
+
+  .corner-bottom-gold {
+    width: 120mm;
+    height: 120mm;
+
+    right: -84mm;
+    bottom: -84mm;
+
+    border-width: 3.8mm;
+  }
+
+  /* LOGO */
+
+  .online-test-logo {
+    left: 18mm;
+    top: 13mm;
+
+    gap: 3mm;
+  }
+
+  .logo-round {
+    width: 11mm;
+    height: 11mm;
+
+    font-size: 3.5mm;
+  }
+
+  .logo-title {
+    font-size: 5.3mm;
+  }
+
+  .logo-subtitle {
+    margin-top: 1mm;
+
+    font-size: 1.8mm;
+  }
+
+  /* MAIN */
+
+  .certificate-main {
+    left: 39mm;
+    right: 49mm;
+
+    top: 17mm;
+    bottom: 17mm;
+  }
+
+  .certificate-main h1 {
+    font-size: 16.5mm;
+  }
+
+  .completion-heading {
+    margin-top: 2mm;
+
+    gap: 3mm;
+  }
+
+  .completion-heading span {
+    width: 27mm;
+
+    height: 0.5mm;
+  }
+
+  .completion-heading h2 {
+    font-size: 5.2mm;
+
+    letter-spacing: 0.6mm;
+  }
+
+  .presented {
+    margin-top: 6mm;
+
+    font-size: 2.6mm;
+  }
+
+  .student-name {
+    margin-top: 1mm;
+
+    font-size: 15mm;
+  }
+
+  .student-line {
+    margin-top: 1mm;
+
+    height: 0.25mm;
+  }
+
+  .certificate-description {
+    margin-top: 3.5mm;
+
+    font-size: 2.8mm;
+  }
+
+  .test-title {
+    margin-top: 1.5mm;
+
+    font-size: 5mm;
+  }
+
+  .certificate-results {
+    margin-top: 5mm;
+
+    gap: 11mm;
+  }
+
+  .result-item {
+    min-width: 25mm;
+  }
+
+  .result-item span {
+    font-size: 1.9mm;
+  }
+
+  .result-item strong {
+    font-size: 4.5mm;
+
+    margin-top: 1mm;
+  }
+
+  .result-item.completed-date strong {
+    font-size: 3.6mm;
+  }
+
+  .result-separator {
+    width: 0.25mm;
+
+    height: 10mm;
+  }
+
+  /* RIBBON */
+
+  .right-strip {
+    right: 13mm;
+
+    width: 23mm;
+    height: 43mm;
+
+    border-left-width: 0.5mm;
+    border-right-width: 0.5mm;
+  }
+
+  .strip-text {
+    margin-top: 5mm;
+
+    font-size: 2mm;
+
+    letter-spacing: 0.7mm;
+  }
+
+  .strip-title {
+    margin-top: 1.5mm;
+
+    font-size: 4.8mm;
+  }
+
+  .strip-line {
+    width: 12mm;
+
+    height: 0.5mm;
+
+    margin-top: 2.5mm;
+  }
+
+  .strip-tail {
+    top: 33mm;
+
+    left: -0.5mm;
+
+    border-left-width: 11.5mm;
+
+    border-right-width: 11.5mm;
+
+    border-top-width: 9mm;
+  }
+
+  /* SEAL */
+
+  .verified-seal {
+    top: 22mm;
+    right: 12.7mm;
+
+    width: 23mm;
+    height: 23mm;
+  }
+
+  .seal-gold {
+    width: 20mm;
+    height: 20mm;
+
+    border-width: 0.7mm;
+  }
+
+  .seal-blue {
+    width: 16.5mm;
+    height: 16.5mm;
+
+    border-width: 0.5mm;
+  }
+
+  .seal-star {
+    font-size: 2.3mm;
+  }
+
+  .seal-verified {
+    font-size: 1.8mm;
+  }
+
+  .seal-certificate {
+    font-size: 1.2mm;
+  }
+
+  .seal-check {
+    width: 4.5mm;
+    height: 4.5mm;
+
+    font-size: 2.4mm;
+  }
+
+  /* SIGNATURE */
+
+  .signature-block {
+    left: 20mm;
+    bottom: 16mm;
+
+    width: 48mm;
+  }
+
+  .signature-writing {
+    height: 7.5mm;
+
+    font-size: 6mm;
+  }
+
+  .signature-line {
+    width: 46mm;
+
+    height: 0.25mm;
+  }
+
+  .signature-label {
+    margin-top: 1mm;
+
+    font-size: 1.8mm;
+  }
+
+  .signature-person {
+    font-size: 2mm;
+  }
+
+  /* ISSUER */
+
+  .issued-block {
+    left: 49%;
+
+    bottom: 17mm;
+
+    gap: 2.5mm;
+  }
+
+  .issued-check {
+    width: 9.5mm;
+    height: 9.5mm;
+
+    border-width: 0.5mm;
+
+    font-size: 4.5mm;
+  }
+
+  .issued-content span {
+    font-size: 1.8mm;
+  }
+
+  .issued-content strong {
+    font-size: 2.8mm;
+  }
+
+  /* =====================================================
+   QR - PRINT
+===================================================== */
+
+.certificate-qr {
+  right: 13.5mm;
+
+  bottom: 13mm;
+
+  gap: 1mm;
+}
+
+.certificate-qr svg {
+  width: 13mm !important;
+
+  height: 13mm !important;
+
+  padding: 1mm;
+
+  background: #ffffff;
+
+  border: 0.5mm solid #172c48;
+
+  border-radius: 0.5mm;
+
+  display: block;
+}
+
+.certificate-qr > span {
+  font-size: 1.5mm;
+}
+
+
+/* =====================================================
+   ID
+===================================================== */
+
+.certificate-id {
+  right: 15mm;
+
+  bottom: 7mm;
+
+  font-size: 1.8mm;
+
+  z-index: 999 !important;
+}
+
+}

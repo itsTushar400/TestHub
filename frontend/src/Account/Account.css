@@ -1,0 +1,1574 @@
+/* =========================================================
+   ACCOUNT PAGE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.account-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f6f9fd;
+
+  color: #17375e;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+.account-page button,
+.account-page input {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.account-navbar {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 9999;
+
+  width: 100%;
+  min-height: 64px;
+
+  padding: 0 6%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom: 1px solid #e5ebf2;
+
+  box-shadow:
+    0 2px 12px rgba(20, 55, 90, 0.04);
+
+  backdrop-filter: blur(14px);
+}
+
+
+/* LOGO */
+
+.account-logo {
+  flex-shrink: 0;
+
+  color: #0d70df;
+
+  font-size: 18px;
+
+  font-weight: 850;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+
+/* NAV LINKS */
+
+.account-nav-links {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+}
+
+.account-nav-links a {
+  position: relative;
+
+  padding: 9px 13px;
+
+  color: #617891;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.account-nav-links a:hover {
+  color: #0d70df;
+
+  background: #f1f7ff;
+}
+
+.account-nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 13px;
+  right: 13px;
+
+  bottom: 1px;
+
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #1479ee;
+
+  transform: scaleX(0);
+
+  transition: 0.2s ease;
+}
+
+.account-nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   USER NAV
+   ========================================================= */
+
+.account-user-nav {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 5px 9px;
+
+  border-radius: 9px;
+
+  color: #263f5b;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.account-user-nav:hover,
+.account-user-nav.active {
+  background: #eef6ff;
+}
+
+.account-user-nav > span {
+  max-width: 105px;
+
+  overflow: hidden;
+
+  color: #29435f;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.account-arrow {
+  color: #7890a9;
+
+  font-size: 11px;
+}
+
+
+/* MINI AVATAR */
+
+.account-mini-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1478e8,
+      #55a7f5
+    );
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.account-mini-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
+
+.account-hamburger {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+  margin: 0;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  border: 1px solid #dce6f0;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.account-hamburger:hover {
+  background: #f1f7ff;
+
+  border-color: #bcd5ef;
+}
+
+.account-hamburger span {
+  display: block;
+
+  width: 19px;
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #17375e;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+
+/* HAMBURGER → X */
+
+.account-hamburger.open span:nth-child(1) {
+  transform:
+    translateY(7px)
+    rotate(45deg);
+}
+
+.account-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.account-hamburger.open span:nth-child(3) {
+  transform:
+    translateY(-7px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.account-container {
+  width: min(
+    1120px,
+    calc(100% - 70px)
+  );
+
+  margin: 0 auto;
+
+  padding: 48px 0 70px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.account-header {
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.account-label {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #0d72df;
+
+  font-size: 8px;
+  font-weight: 850;
+
+  letter-spacing: 1.8px;
+}
+
+.account-header h1 {
+  margin: 0;
+
+  color: #132f4f;
+
+  font-size: 36px;
+  line-height: 1.05;
+
+  letter-spacing: -1.4px;
+}
+
+.account-header p {
+  margin: 9px 0 0;
+
+  color: #7b8ea4;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.account-message {
+  margin-bottom: 18px;
+
+  padding: 11px 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  border-radius: 9px;
+
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.account-message span {
+  width: 21px;
+  height: 21px;
+
+  flex: 0 0 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-weight: 900;
+}
+
+.account-message.success {
+  color: #177044;
+
+  border: 1px solid #bee7cf;
+
+  background: #effaf4;
+}
+
+.account-message.success span {
+  color: #fff;
+  background: #28a968;
+}
+
+.account-message.error {
+  color: #a23c3c;
+
+  border: 1px solid #efcaca;
+
+  background: #fff5f5;
+}
+
+.account-message.error span {
+  color: #fff;
+  background: #df6262;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+   ========================================================= */
+
+.account-profile-card {
+  min-height: 145px;
+
+  padding: 22px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border: 1px solid #e1e9f2;
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  box-shadow:
+    0 8px 26px rgba(24, 62, 100, 0.05);
+}
+
+.account-profile-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+   ========================================================= */
+
+.account-avatar-wrapper {
+  position: relative;
+
+  flex: 0 0 auto;
+}
+
+.account-large-avatar {
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #1478e8,
+      #64b0f5
+    );
+
+  border: 4px solid #eef6ff;
+
+  font-size: 32px;
+  font-weight: 850;
+
+  box-shadow:
+    0 8px 22px rgba(20, 116, 226, 0.15);
+}
+
+.account-large-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.avatar-loader {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-loader span {
+  width: 24px;
+  height: 24px;
+
+  border: 3px solid rgba(255,255,255,.4);
+
+  border-top-color: #fff;
+
+  border-radius: 50%;
+
+  animation:
+    accountSpin 0.8s linear infinite;
+}
+
+@keyframes accountSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* CAMERA */
+
+.avatar-camera-btn {
+  position: absolute;
+
+  right: -2px;
+  bottom: 1px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #fff;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  background: #1478e8;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px rgba(20, 90, 160, 0.2);
+}
+
+.avatar-camera-btn:hover {
+  background: #0b64ca;
+}
+
+
+/* =========================================================
+   PROFILE INFO
+   ========================================================= */
+
+.account-profile-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.account-profile-info h2 {
+  margin: 0;
+
+  color: #183654;
+
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.account-profile-info > p {
+  max-width: 360px;
+
+  margin: 5px 0 9px;
+
+  color: #71869d;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.account-role {
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  color: #176bc4;
+
+  background: #eaf4ff;
+
+  font-size: 8px;
+  font-weight: 750;
+}
+
+.photo-help {
+  margin-top: 7px;
+
+  color: #8799ad;
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   EDIT NAME
+   ========================================================= */
+
+.profile-name-edit {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.profile-name-edit label {
+  color: #71859b;
+
+  font-size: 8px;
+  font-weight: 750;
+}
+
+.profile-name-edit input {
+  width: min(340px, 100%);
+
+  height: 38px;
+
+  padding: 0 11px;
+
+  outline: none;
+
+  border: 1px solid #dbe5ef;
+
+  border-radius: 7px;
+
+  color: #243c57;
+
+  background: #fff;
+
+  font-size: 10px;
+}
+
+.profile-name-edit input:focus {
+  border-color: #4a9aee;
+
+  box-shadow:
+    0 0 0 3px rgba(20,115,230,.07);
+}
+
+
+/* =========================================================
+   PROFILE ACTIONS
+   ========================================================= */
+
+.profile-card-actions {
+  flex-shrink: 0;
+}
+
+.edit-profile-btn,
+.save-profile-btn,
+.cancel-profile-btn {
+  min-height: 38px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.edit-profile-btn {
+  color: #1475dc;
+
+  border: 1px solid #cfe0f2;
+
+  background: #f2f8ff;
+}
+
+.edit-profile-btn:hover {
+  background: #e7f3ff;
+}
+
+.profile-edit-actions {
+  display: flex;
+
+  gap: 7px;
+}
+
+.save-profile-btn {
+  color: #fff;
+
+  border: 1px solid #1478e8;
+
+  background: #1478e8;
+}
+
+.save-profile-btn:hover {
+  background: #0964ca;
+}
+
+.save-profile-btn:disabled,
+.cancel-profile-btn:disabled {
+  opacity: .65;
+
+  cursor: not-allowed;
+}
+
+.cancel-profile-btn {
+  color: #61768d;
+
+  border: 1px solid #dbe4ed;
+
+  background: #f7f9fb;
+}
+
+
+/* =========================================================
+   PHOTO CONTROL CARD
+   ========================================================= */
+
+.photo-control-card {
+  margin-top: 12px;
+
+  padding: 15px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border: 1px solid #dce8f3;
+
+  border-radius: 11px;
+
+  background: #fafdff;
+}
+
+.photo-control-card > div:first-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.photo-control-card strong {
+  color: #27445f;
+
+  font-size: 10px;
+}
+
+.photo-control-card > div:first-child span {
+  color: #8295a9;
+
+  font-size: 8px;
+}
+
+.photo-control-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.change-photo-btn,
+.discard-photo-btn,
+.remove-photo-btn {
+  min-height: 34px;
+
+  padding: 0 11px;
+
+  border-radius: 7px;
+
+  font-size: 8px;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.change-photo-btn {
+  color: #1476df;
+
+  border: 1px solid #cfe1f4;
+
+  background: #edf6ff;
+}
+
+.discard-photo-btn {
+  color: #667b91;
+
+  border: 1px solid #dce5ed;
+
+  background: #f7f9fb;
+}
+
+.remove-photo-btn {
+  color: #d34d4d;
+
+  border: 1px solid #f0caca;
+
+  background: #fff5f5;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.account-stats {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.account-stat-card {
+  min-height: 95px;
+
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border: 1px solid #e1e9f2;
+
+  border-radius: 11px;
+
+  background: #fff;
+
+  box-shadow:
+    0 6px 20px rgba(24,62,100,.035);
+}
+
+.account-stat-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  font-size: 18px;
+}
+
+.account-stat-icon.blue {
+  color: #1375df;
+  background: #e9f4ff;
+}
+
+.account-stat-icon.purple {
+  color: #7955d9;
+  background: #f0ecff;
+}
+
+.account-stat-icon.orange {
+  color: #ef8c2f;
+  background: #fff2e5;
+}
+
+.account-stat-icon.green {
+  color: #20a465;
+  background: #e9f9f1;
+}
+
+.account-stat-card > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.account-stat-card span {
+  color: #8294a8;
+
+  font-size: 8px;
+  font-weight: 650;
+}
+
+.account-stat-card strong {
+  color: #1b3959;
+
+  font-size: 20px;
+  font-weight: 850;
+}
+
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.account-details-card {
+  margin-top: 20px;
+
+  padding: 23px;
+
+  border: 1px solid #e1e9f2;
+
+  border-radius: 13px;
+
+  background: #fff;
+}
+
+.account-section-title > span {
+  color: #1477e5;
+
+  font-size: 7px;
+  font-weight: 850;
+
+  letter-spacing: 1.5px;
+}
+
+.account-section-title h2 {
+  margin: 8px 0 20px;
+
+  color: #183653;
+
+  font-size: 22px;
+
+  letter-spacing: -.5px;
+}
+
+.account-details-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1px;
+
+  border: 1px solid #e7edf3;
+
+  border-radius: 9px;
+
+  overflow: hidden;
+}
+
+.detail-item {
+  min-height: 72px;
+
+  padding: 15px 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  background: #fbfdff;
+}
+
+.detail-item:nth-child(1),
+.detail-item:nth-child(2) {
+  border-bottom: 1px solid #e7edf3;
+}
+
+.detail-item:nth-child(1),
+.detail-item:nth-child(3) {
+  border-right: 1px solid #e7edf3;
+}
+
+.detail-item span {
+  color: #8497aa;
+
+  font-size: 8px;
+  font-weight: 650;
+}
+
+.detail-item strong {
+  color: #29445f;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-active {
+  color: #1b9a61 !important;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.account-actions {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.account-action-card {
+  min-height: 82px;
+
+  padding: 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border: 1px solid #e1e9f2;
+
+  border-radius: 11px;
+
+  color: #203b57;
+
+  background: #fff;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+.account-action-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #c8dcef;
+
+  box-shadow:
+    0 10px 25px rgba(24,62,100,.07);
+}
+
+.action-icon {
+  width: 39px;
+  height: 39px;
+
+  flex: 0 0 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eef6ff;
+
+  font-size: 17px;
+}
+
+.account-action-card > div:nth-child(2) {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.account-action-card strong {
+  color: #29435e;
+
+  font-size: 10px;
+}
+
+.account-action-card span {
+  color: #8799ab;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.account-action-card > b {
+  color: #1478e8;
+
+  font-size: 18px;
+}
+
+.logout-action {
+  border: 1px solid #f0dede;
+
+  background: #fffafa;
+}
+
+.logout-action .action-icon {
+  background: #fff0f0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .account-navbar {
+    padding: 0 25px;
+  }
+
+  .account-container {
+    width: calc(100% - 40px);
+  }
+
+  .account-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .account-navbar {
+    position: sticky;
+
+    min-height: 62px;
+
+    padding: 0 15px;
+
+    gap: 10px;
+  }
+
+  .account-nav-links {
+    display: none;
+  }
+
+
+  /* HAMBURGER */
+
+  .account-hamburger {
+    display: flex;
+
+    order: 3;
+
+    margin-left: 0;
+  }
+
+
+  /* USER */
+
+  .account-user-nav {
+    order: 2;
+
+    padding: 3px;
+
+    margin-left: auto;
+  }
+
+  .account-user-nav > span,
+  .account-user-nav .account-arrow {
+    display: none;
+  }
+
+
+  /* MOBILE MENU */
+
+  .account-nav-links.mobile-open {
+    position: absolute;
+
+    top: calc(100% + 7px);
+
+    left: 10px;
+    right: 10px;
+
+    width: auto;
+
+    padding: 8px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    justify-content: flex-start;
+
+    gap: 3px;
+
+    border: 1px solid #e1e8f0;
+
+    border-radius: 13px;
+
+    background: #fff;
+
+    box-shadow:
+      0 18px 45px rgba(20,55,90,.15);
+
+    z-index: 9999;
+  }
+
+  .account-nav-links.mobile-open a {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 11px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    border-radius: 8px;
+
+    color: #28445f;
+
+    font-size: 13px;
+
+    font-weight: 650;
+  }
+
+  .account-nav-links.mobile-open a:hover {
+    color: #1477e8;
+
+    background: #f0f7ff;
+  }
+
+  .account-nav-links.mobile-open a::after {
+    display: none !important;
+  }
+
+
+  /* MAIN */
+
+  .account-container {
+    width: calc(100% - 30px);
+
+    padding-top: 35px;
+  }
+
+  .account-profile-card {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .profile-card-actions {
+    width: 100%;
+  }
+
+  .edit-profile-btn {
+    width: 100%;
+  }
+
+  .profile-edit-actions {
+    width: 100%;
+  }
+
+  .profile-edit-actions button {
+    flex: 1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .account-logo {
+    font-size: 17px;
+  }
+
+  .account-navbar {
+    min-height: 60px;
+
+    padding: 0 12px;
+  }
+
+  .account-mini-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .account-hamburger {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  /* HEADER */
+
+  .account-header {
+    margin-bottom: 20px;
+  }
+
+  .account-header h1 {
+    font-size: 29px;
+  }
+
+  .account-header p {
+    font-size: 9px;
+  }
+
+
+  /* PROFILE */
+
+  .account-profile-card {
+    padding: 18px;
+  }
+
+  .account-profile-left {
+    width: 100%;
+
+    gap: 13px;
+  }
+
+  .account-large-avatar {
+    width: 75px;
+    height: 75px;
+
+    font-size: 27px;
+  }
+
+  .account-profile-info h2 {
+    font-size: 19px;
+  }
+
+  .account-profile-info > p {
+    max-width: 230px;
+
+    font-size: 8px;
+  }
+
+
+  /* PHOTO CONTROL */
+
+  .photo-control-card {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .photo-control-buttons {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+
+
+  /* STATS */
+
+  .account-stats {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 9px;
+  }
+
+  .account-stat-card {
+    min-height: 85px;
+
+    padding: 12px;
+
+    gap: 8px;
+  }
+
+  .account-stat-icon {
+    width: 35px;
+    height: 35px;
+
+    flex-basis: 35px;
+
+    font-size: 14px;
+  }
+
+  .account-stat-card strong {
+    font-size: 17px;
+  }
+
+
+  /* DETAILS */
+
+  .account-details-card {
+    padding: 17px;
+  }
+
+  .account-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-item,
+  .detail-item:nth-child(1),
+  .detail-item:nth-child(2),
+  .detail-item:nth-child(3) {
+    min-height: 65px;
+
+    border-right: 0;
+
+    border-bottom: 1px solid #e7edf3;
+  }
+
+  .detail-item:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* ACTIONS */
+
+  .account-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .account-logo {
+    font-size: 15px;
+  }
+
+  .account-navbar {
+    padding: 0 10px;
+  }
+
+  .account-hamburger {
+    width: 36px;
+    height: 36px;
+  }
+
+  .account-mini-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .account-container {
+    width: calc(100% - 20px);
+
+    padding-top: 28px;
+  }
+
+  .account-header h1 {
+    font-size: 26px;
+  }
+
+  .account-profile-left {
+    align-items: flex-start;
+  }
+
+  .account-large-avatar {
+    width: 65px;
+    height: 65px;
+
+    font-size: 23px;
+  }
+
+  .account-profile-info h2 {
+    font-size: 17px;
+  }
+
+  .account-profile-info > p {
+    max-width: 180px;
+  }
+
+  .account-stat-card {
+    min-height: 80px;
+
+    padding: 9px;
+  }
+
+  .account-stat-icon {
+    width: 31px;
+    height: 31px;
+
+    min-width: 31px;
+    flex-basis: 31px;
+  }
+
+  .account-stat-card span {
+    font-size: 7px;
+  }
+
+  .account-stat-card strong {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+  .account-logo {
+    font-size: 14px;
+  }
+
+  .account-hamburger {
+    width: 34px;
+    height: 34px;
+  }
+
+  .account-mini-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .account-stats {
+    grid-template-columns: 1fr;
+  }
+
+}

@@ -1,0 +1,585 @@
+/* =========================================================
+   ADMIN NOTIFICATION PAGE
+========================================================= */
+
+.admin-notification-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 40px 30px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.08),
+      transparent 35%
+    ),
+    #f5f7fb;
+}
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.notification-card {
+  width: 100%;
+  max-width: 930px;
+
+  margin: 0 auto;
+
+  box-sizing: border-box;
+
+  padding: 34px;
+
+  background: #ffffff;
+
+  border: 1px solid #e8ebf2;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.notification-page-header {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 34px;
+}
+
+.notification-page-icon {
+  width: 62px;
+  height: 62px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background: #eef2ff;
+
+  font-size: 30px;
+}
+
+.notification-heading h1 {
+  margin: 0 0 6px;
+
+  color: #172033;
+
+  font-size: 29px;
+  font-weight: 750;
+}
+
+.notification-heading p {
+  margin: 0;
+
+  color: #697386;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.notification-form {
+  width: 100%;
+}
+
+.form-group {
+  position: relative;
+
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #253047;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+/* =========================================================
+   INPUTS / SELECT / TEXTAREA
+========================================================= */
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border: 1px solid #dce1ea;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"] {
+  padding-right: 70px;
+}
+
+.form-group select {
+  cursor: pointer;
+
+  appearance: auto;
+}
+
+.form-group textarea {
+  min-height: 145px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.10);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9aa3b2;
+}
+
+/* =========================================================
+   SEND TARGET
+========================================================= */
+
+.target-options {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.target-option {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  min-height: 82px;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  border: 1.5px solid #e0e4ec;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.target-option:hover {
+  border-color: #a5a8f5;
+
+  transform: translateY(-1px);
+}
+
+.target-option.active {
+  border-color: #6366f1;
+
+  background: #f5f5ff;
+
+  box-shadow:
+    0 5px 16px rgba(99, 102, 241, 0.08);
+}
+
+.target-option input[type="radio"] {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+
+  accent-color: #6366f1;
+
+  cursor: pointer;
+}
+
+.target-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eef2ff;
+
+  font-size: 22px;
+}
+
+.target-content {
+  min-width: 0;
+}
+
+.target-content strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #1d2738;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.target-content span {
+  display: block;
+
+  color: #758094;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   SELECT STUDENT
+========================================================= */
+
+.select-wrapper {
+  width: 100%;
+}
+
+.select-wrapper select {
+  width: 100%;
+}
+
+.field-info {
+  margin: 7px 0 0;
+
+  color: #7b8495;
+
+  font-size: 12px;
+}
+
+.field-info.error {
+  color: #dc2626;
+}
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 18px;
+}
+
+/* =========================================================
+   CHARACTER COUNT
+========================================================= */
+
+.character-count {
+  position: absolute;
+
+  right: 10px;
+  bottom: -17px;
+
+  color: #9aa3b2;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.notification-preview {
+  margin-top: 31px;
+
+  margin-bottom: 26px;
+}
+
+.preview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.preview-heading span {
+  color: #253047;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.preview-heading small {
+  color: #9aa3b2;
+
+  font-size: 12px;
+}
+
+.preview-box {
+  display: flex;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e2e6ee;
+
+  border-radius: 13px;
+
+  background: #f8fafc;
+}
+
+.preview-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+
+  font-size: 22px;
+}
+
+.preview-content {
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+}
+
+.preview-title {
+  margin-bottom: 5px;
+
+  color: #1c2637;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.preview-message {
+  color: #526074;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+.preview-time {
+  margin-top: 7px;
+
+  color: #9aa3b2;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.send-notification-btn {
+  width: 100%;
+
+  min-height: 53px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.send-notification-btn:hover:not(:disabled) {
+  background: #4338ca;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(79, 70, 229, 0.22);
+}
+
+.send-notification-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.send-notification-btn:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   LOADING SPINNER
+========================================================= */
+
+.spinner {
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation:
+    notification-spin 0.7s linear infinite;
+}
+
+@keyframes notification-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+  .admin-notification-page {
+    padding: 20px 14px;
+  }
+
+  .notification-card {
+    padding: 22px 18px;
+
+    border-radius: 17px;
+  }
+
+  .notification-page-header {
+    align-items: flex-start;
+
+    gap: 13px;
+
+    margin-bottom: 26px;
+  }
+
+  .notification-page-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 25px;
+  }
+
+  .notification-heading h1 {
+    font-size: 24px;
+  }
+
+  .notification-heading p {
+    font-size: 13px;
+  }
+
+  .target-options {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-card {
+    padding: 18px 14px;
+  }
+
+  .notification-page-header {
+    flex-direction: column;
+  }
+
+  .target-option {
+    min-height: 75px;
+  }
+
+  .preview-box {
+    padding: 14px;
+  }
+}
