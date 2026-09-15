@@ -90,7 +90,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
+app.options("/{*splat}", cors());
 app.use(express.json());
 
 app.use(
