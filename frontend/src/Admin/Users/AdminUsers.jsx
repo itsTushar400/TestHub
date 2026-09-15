@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../AdminDashboard.css";
 
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AdminUsers() {
   const navigate = useNavigate();
@@ -357,7 +357,7 @@ function AdminUsers() {
             to="/admin"
             className="admin-menu-item"
           >
-            <span>📊</span>
+            <span>ðŸ“Š</span>
             Dashboard
           </Link>
 
@@ -365,7 +365,7 @@ function AdminUsers() {
             to="/admin/users"
             className="admin-menu-item active"
           >
-            <span>👥</span>
+            <span>ðŸ‘¥</span>
             Users
           </Link>
 
@@ -373,7 +373,7 @@ function AdminUsers() {
             to="/admin/tests"
             className="admin-menu-item"
           >
-            <span>📝</span>
+            <span>ðŸ“</span>
             Tests
           </Link>
 
@@ -381,7 +381,7 @@ function AdminUsers() {
             to="/admin/questions"
             className="admin-menu-item"
           >
-            <span>❓</span>
+            <span>â“</span>
             Questions
           </Link>
 
@@ -389,7 +389,7 @@ function AdminUsers() {
             to="/admin/results"
             className="admin-menu-item"
           >
-            <span>📈</span>
+            <span>ðŸ“ˆ</span>
             Results
           </Link>
 
@@ -401,7 +401,7 @@ function AdminUsers() {
             to="/"
             className="view-website"
           >
-            🌐 View Website
+            ðŸŒ View Website
           </Link>
 
           <button
@@ -409,7 +409,7 @@ function AdminUsers() {
             className="admin-logout"
             onClick={handleLogout}
           >
-            🚪 Logout
+            ðŸšª Logout
           </button>
 
         </div>
@@ -463,7 +463,7 @@ function AdminUsers() {
           <div>
 
             <h2>
-              All Users 👥
+              All Users ðŸ‘¥
             </h2>
 
             <p>
@@ -486,7 +486,7 @@ function AdminUsers() {
               onClick={fetchUsers}
               disabled={loading}
             >
-              🔄 Refresh
+              ðŸ”„ Refresh
             </button>
 
             <button
@@ -750,7 +750,7 @@ function AdminUsers() {
                               fontWeight: "600",
                             }}
                           >
-                            ✏️ Edit
+                            âœï¸ Edit
                           </button>
 
                           <button
@@ -788,7 +788,7 @@ function AdminUsers() {
                               fontWeight: "600",
                             }}
                           >
-                            🗑️ Delete
+                            ðŸ—‘ï¸ Delete
                           </button>
 
                         </div>
@@ -897,7 +897,7 @@ function AdminUsers() {
                   fontSize: "18px",
                 }}
               >
-                ✕
+                âœ•
               </button>
 
             </div>
@@ -998,11 +998,11 @@ function AdminUsers() {
                 >
 
                   <option value="student">
-                    👨‍🎓 Student
+                    ðŸ‘¨â€ðŸŽ“ Student
                   </option>
 
                   <option value="admin">
-                    👨‍💼 Admin
+                    ðŸ‘¨â€ðŸ’¼ Admin
                   </option>
 
                 </select>
@@ -1140,3 +1140,4 @@ const inputStyle = {
 };
 
 export default AdminUsers;
+

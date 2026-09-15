@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import {
   Link,
   useNavigate
 } from "react-router-dom";
 import "../AdminDashboard.css";
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AdminTests() {
   const navigate = useNavigate();
@@ -639,7 +639,7 @@ function AdminTests() {
       to="/admin"
       className="admin-menu-item"
     >
-      <span>📊</span>
+      <span>ðŸ“Š</span>
       Dashboard
     </Link>
 
@@ -647,7 +647,7 @@ function AdminTests() {
       to="/admin/users"
       className="admin-menu-item"
     >
-      <span>👥</span>
+      <span>ðŸ‘¥</span>
       Users
     </Link>
 
@@ -655,7 +655,7 @@ function AdminTests() {
       to="/admin/tests"
       className="admin-menu-item active"
     >
-      <span>📝</span>
+      <span>ðŸ“</span>
       Tests
     </Link>
 
@@ -663,7 +663,7 @@ function AdminTests() {
       to="/admin/questions"
       className="admin-menu-item"
     >
-      <span>❓</span>
+      <span>â“</span>
       Questions
     </Link>
 
@@ -671,7 +671,7 @@ function AdminTests() {
       to="/admin/results"
       className="admin-menu-item"
     >
-      <span>📈</span>
+      <span>ðŸ“ˆ</span>
       Results
     </Link>
 
@@ -684,7 +684,7 @@ function AdminTests() {
       to="/"
       className="view-website"
     >
-      🌐 View Website
+      ðŸŒ View Website
     </Link>
 
     <button
@@ -692,7 +692,7 @@ function AdminTests() {
       className="admin-logout"
       onClick={logout}
     >
-      🚪 Logout
+      ðŸšª Logout
     </button>
 
   </div>
@@ -731,7 +731,7 @@ function AdminTests() {
               className="refresh-btn"
               onClick={loadTests}
             >
-              🔄 Refresh
+              ðŸ”„ Refresh
             </button>
 
 
@@ -756,7 +756,7 @@ function AdminTests() {
           <div className="empty-questions">
 
             <div className="empty-question-icon">
-              📚
+              ðŸ“š
             </div>
 
             <h3>
@@ -794,7 +794,7 @@ function AdminTests() {
                 <div className="admin-test-card-top">
 
                   <div className="test-card-icon">
-                    📝
+                    ðŸ“
                   </div>
 
 
@@ -833,7 +833,7 @@ function AdminTests() {
                   <div>
 
                     <span>
-                      ⏱️
+                      â±ï¸
                     </span>
 
                     <strong>
@@ -849,7 +849,7 @@ function AdminTests() {
                   <div>
 
                     <span>
-                      ❓
+                      â“
                     </span>
 
                     <strong>
@@ -886,7 +886,7 @@ function AdminTests() {
                     }
                   >
 
-                    👁 Manage Questions
+                    ðŸ‘ Manage Questions
 
                   </button>
 
@@ -900,7 +900,7 @@ function AdminTests() {
                     }
                   >
 
-                    ✏️ Edit
+                    âœï¸ Edit
 
                   </button>
 
@@ -914,7 +914,7 @@ function AdminTests() {
                     }
                   >
 
-                    🗑 Delete
+                    ðŸ—‘ Delete
 
                   </button>
 
@@ -976,7 +976,7 @@ function AdminTests() {
                   closeCreateModal
                 }
               >
-                ✕
+                âœ•
               </button>
 
             </div>
@@ -1140,7 +1140,7 @@ function AdminTests() {
 
                   {saving
                     ? "Creating..."
-                    : "✓ Create Test"}
+                    : "âœ“ Create Test"}
 
                 </button>
 
@@ -1200,7 +1200,7 @@ function AdminTests() {
                   closeEditModal
                 }
               >
-                ✕
+                âœ•
               </button>
 
             </div>
@@ -1364,7 +1364,7 @@ function AdminTests() {
 
                   {saving
                     ? "Updating..."
-                    : "✓ Update Test"}
+                    : "âœ“ Update Test"}
 
                 </button>
 
@@ -1385,3 +1385,4 @@ function AdminTests() {
 }
 
 export default AdminTests;
+

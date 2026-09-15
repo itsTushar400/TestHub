@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import * as XLSX from "xlsx";
 import "../AdminDashboard.css";
 
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AdminQuestions() {
   const navigate = useNavigate();
@@ -541,7 +541,7 @@ function AdminQuestions() {
       to="/admin"
       className="admin-menu-item"
     >
-      <span>📊</span>
+      <span>ðŸ“Š</span>
       Dashboard
     </Link>
 
@@ -549,7 +549,7 @@ function AdminQuestions() {
       to="/admin/users"
       className="admin-menu-item"
     >
-      <span>👥</span>
+      <span>ðŸ‘¥</span>
       Users
     </Link>
 
@@ -557,7 +557,7 @@ function AdminQuestions() {
       to="/admin/tests"
       className="admin-menu-item"
     >
-      <span>📝</span>
+      <span>ðŸ“</span>
       Tests
     </Link>
 
@@ -565,7 +565,7 @@ function AdminQuestions() {
       to="/admin/questions"
       className="admin-menu-item active"
     >
-      <span>❓</span>
+      <span>â“</span>
       Questions
     </Link>
 
@@ -573,7 +573,7 @@ function AdminQuestions() {
       to="/admin/results"
       className="admin-menu-item"
     >
-      <span>📈</span>
+      <span>ðŸ“ˆ</span>
       Results
     </Link>
 
@@ -587,7 +587,7 @@ function AdminQuestions() {
       to="/"
       className="view-website"
     >
-      🌐 View Website
+      ðŸŒ View Website
     </Link>
 
     <button
@@ -595,7 +595,7 @@ function AdminQuestions() {
       className="admin-logout"
       onClick={handleLogout}
     >
-      🚪 Logout
+      ðŸšª Logout
     </button>
 
   </div>
@@ -634,7 +634,7 @@ function AdminQuestions() {
               }
               disabled={saving}
             >
-              📥 Excel Template
+              ðŸ“¥ Excel Template
             </button>
 
             {/* IMPORT EXCEL */}
@@ -644,7 +644,7 @@ function AdminQuestions() {
                 saving ? "disabled" : ""
               }`}
             >
-              📤 Import Excel
+              ðŸ“¤ Import Excel
 
               <input
                 type="file"
@@ -665,7 +665,7 @@ function AdminQuestions() {
               onClick={fetchTest}
               disabled={saving}
             >
-              🔄 Refresh
+              ðŸ”„ Refresh
             </button>
 
             {/* ADD QUESTION */}
@@ -699,8 +699,8 @@ function AdminQuestions() {
 
             <span>
               {messageType === "success"
-                ? "✓"
-                : "⚠"}
+                ? "âœ“"
+                : "âš "}
             </span>
 
             <p>{message}</p>
@@ -712,7 +712,7 @@ function AdminQuestions() {
                 setMessageType("");
               }}
             >
-              ×
+              Ã—
             </button>
 
           </div>
@@ -724,7 +724,7 @@ function AdminQuestions() {
           <section className="question-test-info">
 
             <div className="question-test-icon">
-              📚
+              ðŸ“š
             </div>
 
             <div className="question-test-details">
@@ -736,7 +736,7 @@ function AdminQuestions() {
               <p>
                 {test.category ||
                   "General"}{" "}
-                • {test.duration} minutes •{" "}
+                â€¢ {test.duration} minutes â€¢{" "}
                 {test.total_questions || 0}{" "}
                 questions
               </p>
@@ -784,7 +784,7 @@ function AdminQuestions() {
                   setShowForm(false)
                 }
               >
-                ×
+                Ã—
               </button>
 
             </div>
@@ -962,7 +962,7 @@ function AdminQuestions() {
                 >
                   {saving
                     ? "Saving..."
-                    : "✓ Add Question"}
+                    : "âœ“ Add Question"}
                 </button>
 
               </div>
@@ -979,3 +979,4 @@ function AdminQuestions() {
 }
 
 export default AdminQuestions;
+

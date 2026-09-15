@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+﻿import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Tests.css";
 
-const API = "${import.meta.env.VITE_API_URL}";
+const API = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 /* =========================================================
    NAVBAR
@@ -34,11 +34,11 @@ function TestsNavbar() {
         className="logo"
         onClick={closeMenu}
       >
-        <span className="logo-icon">🎓</span>
+        <span className="logo-icon">ðŸŽ“</span>
 
         <span className="logo-content">
           <strong>TestHub</strong>
-          <small>LEARN • PRACTICE • GROW</small>
+          <small>LEARN â€¢ PRACTICE â€¢ GROW</small>
         </span>
       </Link>
 
@@ -340,7 +340,7 @@ function Tests() {
       value.includes("aptitude") ||
       value.includes("math")
     ) {
-      return "🧮";
+      return "ðŸ§®";
     }
 
 
@@ -349,7 +349,7 @@ function Tests() {
       value.includes("program") ||
       value.includes("computer")
     ) {
-      return "💻";
+      return "ðŸ’»";
     }
 
 
@@ -357,7 +357,7 @@ function Tests() {
       value.includes("english") ||
       value.includes("language")
     ) {
-      return "📖";
+      return "ðŸ“–";
     }
 
 
@@ -366,7 +366,7 @@ function Tests() {
       value.includes("physics") ||
       value.includes("chemistry")
     ) {
-      return "🔬";
+      return "ðŸ”¬";
     }
 
 
@@ -374,18 +374,18 @@ function Tests() {
       value.includes("general") ||
       value.includes("gk")
     ) {
-      return "🧠";
+      return "ðŸ§ ";
     }
 
 
     if (
       value.includes("reasoning")
     ) {
-      return "🧩";
+      return "ðŸ§©";
     }
 
 
-    return "📝";
+    return "ðŸ“";
   };
 
 
@@ -613,7 +613,7 @@ function Tests() {
         <div className="tests-hero-content">
 
           <div className="hero-badge">
-            🎯 PRACTICE • LEARN • IMPROVE
+            ðŸŽ¯ PRACTICE â€¢ LEARN â€¢ IMPROVE
           </div>
 
 
@@ -684,13 +684,13 @@ function Tests() {
         <div className="tests-hero-visual">
 
           <div className="hero-circle">
-            📝
+            ðŸ“
           </div>
 
 
           <div className="floating-card floating-card-one">
 
-            <span>🏆</span>
+            <span>ðŸ†</span>
 
             <div>
 
@@ -709,7 +709,7 @@ function Tests() {
 
           <div className="floating-card floating-card-two">
 
-            <span>⏱️</span>
+            <span>â±ï¸</span>
 
             <div>
 
@@ -792,7 +792,7 @@ function Tests() {
           <div className="search-box">
 
             <span>
-              🔍
+              ðŸ”
             </span>
 
             <input
@@ -815,7 +815,7 @@ function Tests() {
                   setSearch("")
                 }
               >
-                ×
+                Ã—
               </button>
 
             )}
@@ -895,7 +895,7 @@ function Tests() {
           <div className="tests-error">
 
             <div className="error-icon">
-              ⚠️
+              âš ï¸
             </div>
 
             <div>
@@ -932,7 +932,7 @@ function Tests() {
             <div className="no-tests">
 
               <div className="no-tests-icon">
-                🔎
+                ðŸ”Ž
               </div>
 
               <h3>
@@ -1044,7 +1044,7 @@ function Tests() {
                         <div className="test-info-item">
 
                           <span>
-                            ❓
+                            â“
                           </span>
 
                           <div>
@@ -1065,7 +1065,7 @@ function Tests() {
                         <div className="test-info-item">
 
                           <span>
-                            ⏱️
+                            â±ï¸
                           </span>
 
                           <div>
@@ -1097,7 +1097,7 @@ function Tests() {
                         </span>
 
                         <span className="arrow">
-                          →
+                          â†’
                         </span>
 
                       </Link>
@@ -1124,7 +1124,7 @@ function Tests() {
             <section className="tests-cta">
 
               <div className="cta-icon">
-                🚀
+                ðŸš€
               </div>
 
 
@@ -1164,7 +1164,7 @@ function Tests() {
                 }}
               >
                 Explore Tests
-                <span>↑</span>
+                <span>â†‘</span>
               </button>
 
             </section>
@@ -1179,3 +1179,4 @@ function Tests() {
 
 
 export default Tests;
+

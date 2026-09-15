@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import {
   Link,
   useNavigate,
@@ -9,7 +9,7 @@ import * as XLSX from "xlsx";
 import "../AdminDashboard.css";
 import "./AdminQuestions.css";
 
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AdminQuestions() {
   const navigate = useNavigate();
@@ -429,17 +429,17 @@ function AdminQuestions() {
   <nav className="admin-menu">
 
     <Link to="/admin" className="admin-menu-item">
-      <span>📊</span>
+      <span>ðŸ“Š</span>
       Dashboard
     </Link>
 
     <Link to="/admin/users" className="admin-menu-item">
-      <span>👥</span>
+      <span>ðŸ‘¥</span>
       Users
     </Link>
 
     <Link to="/admin/tests" className="admin-menu-item">
-      <span>📝</span>
+      <span>ðŸ“</span>
       Tests
     </Link>
 
@@ -447,12 +447,12 @@ function AdminQuestions() {
       to="/admin/questions"
       className="admin-menu-item active"
     >
-      <span>❓</span>
+      <span>â“</span>
       Questions
     </Link>
 
     <Link to="/admin/results" className="admin-menu-item">
-      <span>📈</span>
+      <span>ðŸ“ˆ</span>
       Results
     </Link>
 
@@ -461,7 +461,7 @@ function AdminQuestions() {
   <div className="admin-sidebar-bottom">
 
     <Link to="/" className="view-website">
-      🌐 View Website
+      ðŸŒ View Website
     </Link>
 
     <button
@@ -469,7 +469,7 @@ function AdminQuestions() {
       className="admin-logout"
       onClick={logout}
     >
-      🚪 Logout
+      ðŸšª Logout
     </button>
 
   </div>
@@ -500,7 +500,7 @@ function AdminQuestions() {
               navigate("/admin/tests")
             }
           >
-            ← Back to Tests
+            â† Back to Tests
           </button>
 
         </div>
@@ -511,7 +511,7 @@ function AdminQuestions() {
 
           <div className="admin-stat-card">
             <div className="admin-stat-icon">
-              📝
+              ðŸ“
             </div>
 
             <div>
@@ -528,7 +528,7 @@ function AdminQuestions() {
 
           <div className="admin-stat-card">
             <div className="admin-stat-icon">
-              ❓
+              â“
             </div>
 
             <div>
@@ -545,7 +545,7 @@ function AdminQuestions() {
 
           <div className="admin-stat-card">
             <div className="admin-stat-icon">
-              ⏱️
+              â±ï¸
             </div>
 
             <div>
@@ -755,7 +755,7 @@ function AdminQuestions() {
           <div className="excel-import-box">
 
             <div className="excel-icon">
-              📊
+              ðŸ“Š
             </div>
 
             <h3>
@@ -798,3 +798,4 @@ function AdminQuestions() {
 }
 
 export default AdminQuestions;
+

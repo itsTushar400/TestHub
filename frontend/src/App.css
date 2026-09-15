@@ -10651,3 +10651,461 @@ footer p {
   }
 
 }
+
+/* =========================================================
+   LOGIN PAGE - MOBILE UI FIX
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .login-page {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  /* Top navbar */
+  .login-navbar {
+    width: 100%;
+    padding: 14px 18px;
+    box-sizing: border-box;
+  }
+
+  .login-navbar-inner {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Logo */
+  .login-logo {
+    max-width: 170px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Signup */
+  .login-signup-btn {
+    white-space: nowrap;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+
+  /* =====================================================
+     LOGIN CARD
+     ===================================================== */
+
+  .login-container {
+    width: 100%;
+    padding: 28px 14px 50px;
+    box-sizing: border-box;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    padding: 28px 20px 30px;
+
+    box-sizing: border-box;
+
+    border-radius: 24px;
+  }
+
+
+  /* =====================================================
+     CARD LOGO
+     ===================================================== */
+
+  .login-card-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+  }
+
+  .login-card-logo-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* =====================================================
+     HEADING
+     ===================================================== */
+
+  .login-card h1 {
+    font-size: 36px;
+    line-height: 1.1;
+
+    text-align: center;
+
+    margin: 0 0 12px;
+  }
+
+  .login-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+
+    text-align: center;
+
+    margin: 0 auto 28px;
+
+    max-width: 300px;
+  }
+
+
+  /* =====================================================
+     FORM
+     ===================================================== */
+
+  .login-form {
+    width: 100%;
+  }
+
+  .login-form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+
+  /* Input */
+  .login-input-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .login-input-wrapper input {
+    width: 100%;
+    min-width: 0;
+
+    height: 58px;
+
+    padding: 0 48px 0 52px;
+
+    box-sizing: border-box;
+
+    font-size: 16px;
+  }
+
+
+  /* =====================================================
+     REMEMBER / FORGOT
+     ===================================================== */
+
+  .login-options {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin: 4px 0 22px;
+  }
+
+  .remember-me {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .remember-me input {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+  }
+
+  .forgot-password {
+    flex-shrink: 0;
+
+    font-size: 14px;
+
+    text-align: right;
+  }
+
+
+  /* =====================================================
+     LOGIN BUTTON
+     ===================================================== */
+
+  .login-btn {
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 14px 18px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+  }
+
+
+  /* =====================================================
+     OR DIVIDER
+     ===================================================== */
+
+  .login-divider {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0 18px;
+  }
+
+  .login-divider::before,
+  .login-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #dce5ef;
+  }
+
+  .login-divider span {
+    white-space: nowrap;
+
+    font-size: 12px;
+  }
+
+
+  /* =====================================================
+     GOOGLE + MICROSOFT
+     ===================================================== */
+
+  .social-login {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .social-login button {
+    width: 100%;
+    min-width: 0;
+
+    height: 56px;
+
+    padding: 10px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 13px;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+  }
+
+  .social-login button span {
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+
+  /* =====================================================
+     SIGNUP TEXT
+     ===================================================== */
+
+  .login-register {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+
+  /* =====================================================
+     SECURITY
+     ===================================================== */
+
+  .login-security {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* AI FLOATING BUTTON */
+  .ai-floating-button {
+    width: 56px !important;
+    height: 56px !important;
+
+    right: 14px !important;
+    bottom: 18px !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .login-navbar {
+    padding: 12px 14px;
+  }
+
+  .login-logo {
+    max-width: 145px;
+  }
+
+  .login-signup-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .login-container {
+    padding: 20px 10px 45px;
+  }
+
+  .login-card {
+    max-width: 100%;
+
+    padding: 24px 16px 26px;
+
+    border-radius: 21px;
+  }
+
+  .login-card-logo-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .login-card h1 {
+    font-size: 32px;
+  }
+
+  .login-subtitle {
+    font-size: 15px;
+    max-width: 280px;
+  }
+
+  .login-input-wrapper input {
+    height: 55px;
+
+    padding-left: 48px;
+    padding-right: 44px;
+
+    font-size: 15px;
+  }
+
+  .login-options {
+    gap: 8px;
+  }
+
+  .remember-me,
+  .forgot-password {
+    font-size: 13px;
+  }
+
+  .social-login {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .social-login button {
+    height: 54px;
+
+    font-size: 14px;
+  }
+
+  .login-btn {
+    min-height: 56px;
+    font-size: 19px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .login-card {
+    padding: 22px 14px 24px;
+  }
+
+  .login-card h1 {
+    font-size: 29px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+  }
+
+  .login-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .forgot-password {
+    text-align: left;
+  }
+
+}

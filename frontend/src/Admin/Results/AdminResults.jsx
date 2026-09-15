@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+﻿import React, { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./AdminResults.css";
 import "../AdminDashboard.css";
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AdminResults() {
   const navigate = useNavigate();
@@ -281,42 +281,42 @@ const formatTime = (seconds) => {
       to="/admin"
       className="admin-menu-item"
     >
-      📊 Dashboard
+      ðŸ“Š Dashboard
     </Link>
 
     <Link
       to="/admin/users"
       className="admin-menu-item"
     >
-      👥 Users
+      ðŸ‘¥ Users
     </Link>
 
     <Link
       to="/admin/tests"
       className="admin-menu-item"
     >
-      📝 Tests
+      ðŸ“ Tests
     </Link>
 
     <Link
       to="/admin/questions"
       className="admin-menu-item"
     >
-      ❓ Questions
+      â“ Questions
     </Link>
 
     <Link
       to="/admin/results"
       className="admin-menu-item active"
     >
-      📈 Results
+      ðŸ“ˆ Results
     </Link>
 
     <Link
   to="/admin/certificates"
   className="admin-menu-item"
 >
-  📜 Certificates
+  ðŸ“œ Certificates
 </Link>
 
 
@@ -328,7 +328,7 @@ const formatTime = (seconds) => {
       to="/"
       className="view-website"
     >
-      🌐 View Website
+      ðŸŒ View Website
     </Link>
 
     <button
@@ -336,7 +336,7 @@ const formatTime = (seconds) => {
       className="admin-logout"
       onClick={handleLogout}
     >
-      🚪 Logout
+      ðŸšª Logout
     </button>
 
   </div>
@@ -366,7 +366,7 @@ const formatTime = (seconds) => {
               className="refresh-btn"
               onClick={fetchResults}
             >
-              🔄 Refresh
+              ðŸ”„ Refresh
             </button>
 
           </div>
@@ -385,8 +385,8 @@ const formatTime = (seconds) => {
           >
             <span>
               {messageType === "success"
-                ? "✓"
-                : "⚠"}
+                ? "âœ“"
+                : "âš "}
             </span>
 
             <p>{message}</p>
@@ -398,7 +398,7 @@ const formatTime = (seconds) => {
                 setMessageType("");
               }}
             >
-              ×
+              Ã—
             </button>
           </div>
         )}
@@ -409,7 +409,7 @@ const formatTime = (seconds) => {
 
           <div className="result-stat-card">
             <div className="result-stat-icon">
-              📊
+              ðŸ“Š
             </div>
 
             <div>
@@ -420,7 +420,7 @@ const formatTime = (seconds) => {
 
           <div className="result-stat-card">
             <div className="result-stat-icon">
-              🎯
+              ðŸŽ¯
             </div>
 
             <div>
@@ -431,7 +431,7 @@ const formatTime = (seconds) => {
 
           <div className="result-stat-card">
             <div className="result-stat-icon">
-              🏆
+              ðŸ†
             </div>
 
             <div>
@@ -442,7 +442,7 @@ const formatTime = (seconds) => {
 
           <div className="result-stat-card">
             <div className="result-stat-icon">
-              ✅
+              âœ…
             </div>
 
             <div>
@@ -459,7 +459,7 @@ const formatTime = (seconds) => {
 
           <div className="results-search">
 
-            <span>🔍</span>
+            <span>ðŸ”</span>
 
             <input
               type="text"
@@ -525,7 +525,7 @@ const formatTime = (seconds) => {
             <div className="empty-results">
 
               <div className="empty-results-icon">
-                📊
+                ðŸ“Š
               </div>
 
               <h3>
@@ -646,7 +646,7 @@ const formatTime = (seconds) => {
                         <td>
 
                           <span className="time-cell">
-                         ⏱️{formatTime(item.time_taken)}
+                         â±ï¸{formatTime(item.time_taken)}
                           </span>
 
                         </td>
@@ -676,7 +676,7 @@ const formatTime = (seconds) => {
                               )
                             }
                           >
-                            👁 View
+                            ðŸ‘ View
                           </button>
 
                         </td>
@@ -734,7 +734,7 @@ const formatTime = (seconds) => {
                 className="close-result-modal"
                 onClick={closeResult}
               >
-                ×
+                Ã—
               </button>
 
             </div>
@@ -847,8 +847,8 @@ const formatTime = (seconds) => {
 
                         <strong>
                           {isCorrect
-                            ? "✓ Correct"
-                            : "✕ Wrong"}
+                            ? "âœ“ Correct"
+                            : "âœ• Wrong"}
                         </strong>
 
                       </div>
@@ -893,3 +893,4 @@ const formatTime = (seconds) => {
 }
 
 export default AdminResults;
+

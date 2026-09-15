@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import {
   Link,
   useNavigate,
 } from "react-router-dom";
 import "./AdminDashboard.css";
+
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AdminDashboard() {
   const navigate = useNavigate();
@@ -78,7 +80,7 @@ function AdminDashboard() {
 
       try {
         const response = await fetch(
-          "${import.meta.env.VITE_API_URL}/api/admin/stats",
+          `${API_URL}/api/admin/stats`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -120,7 +122,7 @@ function AdminDashboard() {
 
       try {
         const response = await fetch(
-          "${import.meta.env.VITE_API_URL}/api/admin/recent-results",
+          `${API_URL}/api/admin/recent-results`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -182,7 +184,7 @@ function AdminDashboard() {
             to="/admin"
             className="admin-menu-item active"
           >
-            <span>📊</span>
+            <span>ðŸ“Š</span>
             Dashboard
           </Link>
 
@@ -190,7 +192,7 @@ function AdminDashboard() {
             to="/admin/users"
             className="admin-menu-item"
           >
-            <span>👥</span>
+            <span>ðŸ‘¥</span>
             Users
           </Link>
 
@@ -198,7 +200,7 @@ function AdminDashboard() {
             to="/admin/tests"
             className="admin-menu-item"
           >
-            <span>📝</span>
+            <span>ðŸ“</span>
             Tests
           </Link>
 
@@ -206,7 +208,7 @@ function AdminDashboard() {
             to="/admin/questions"
             className="admin-menu-item"
           >
-            <span>❓</span>
+            <span>â“</span>
             Questions
           </Link>
 
@@ -214,7 +216,7 @@ function AdminDashboard() {
             to="/admin/results"
             className="admin-menu-item"
           >
-            <span>📈</span>
+            <span>ðŸ“ˆ</span>
             Results
           </Link>
 
@@ -228,7 +230,7 @@ function AdminDashboard() {
             to="/"
             className="view-website"
           >
-            🌐 View Website
+            ðŸŒ View Website
           </Link>
 
           <button
@@ -236,7 +238,7 @@ function AdminDashboard() {
             className="admin-logout"
             onClick={handleAdminLogout}
           >
-            🚪 Logout
+            ðŸšª Logout
           </button>
 
         </div>
@@ -292,7 +294,7 @@ function AdminDashboard() {
           <div>
 
             <h2>
-              Welcome back, {user?.name || "Admin"} 👋
+              Welcome back, {user?.name || "Admin"} ðŸ‘‹
             </h2>
 
             <p>
@@ -321,7 +323,7 @@ function AdminDashboard() {
           <div className="admin-stat-card">
 
             <div className="stat-icon blue">
-              👥
+              ðŸ‘¥
             </div>
 
             <div>
@@ -350,7 +352,7 @@ function AdminDashboard() {
           <div className="admin-stat-card">
 
             <div className="stat-icon purple">
-              📝
+              ðŸ“
             </div>
 
             <div>
@@ -379,7 +381,7 @@ function AdminDashboard() {
           <div className="admin-stat-card">
 
             <div className="stat-icon green">
-              🎯
+              ðŸŽ¯
             </div>
 
             <div>
@@ -408,7 +410,7 @@ function AdminDashboard() {
           <div className="admin-stat-card">
 
             <div className="stat-icon orange">
-              ⭐
+              â­
             </div>
 
             <div>
@@ -621,7 +623,7 @@ function AdminDashboard() {
               >
 
                 <div className="quick-icon blue">
-                  📝
+                  ðŸ“
                 </div>
 
                 <div>
@@ -637,7 +639,7 @@ function AdminDashboard() {
                 </div>
 
                 <b>
-                  →
+                  â†’
                 </b>
 
               </Link>
@@ -649,7 +651,7 @@ function AdminDashboard() {
               >
 
                 <div className="quick-icon purple">
-                  ❓
+                  â“
                 </div>
 
                 <div>
@@ -665,7 +667,7 @@ function AdminDashboard() {
                 </div>
 
                 <b>
-                  →
+                  â†’
                 </b>
 
               </Link>
@@ -677,7 +679,7 @@ function AdminDashboard() {
               >
 
                 <div className="quick-icon green">
-                  👥
+                  ðŸ‘¥
                 </div>
 
                 <div>
@@ -693,7 +695,7 @@ function AdminDashboard() {
                 </div>
 
                 <b>
-                  →
+                  â†’
                 </b>
 
               </Link>
@@ -705,7 +707,7 @@ function AdminDashboard() {
               >
 
                 <div className="quick-icon orange">
-                  📊
+                  ðŸ“Š
                 </div>
 
                 <div>
@@ -721,7 +723,7 @@ function AdminDashboard() {
                 </div>
 
                 <b>
-                  →
+                  â†’
                 </b>
 
               </Link>
@@ -731,7 +733,7 @@ function AdminDashboard() {
   className="quick-action"
 >
   <div className="quick-icon orange">
-    🔔
+    ðŸ””
   </div>
 
   <div>
@@ -745,7 +747,7 @@ function AdminDashboard() {
   </div>
 
   <b>
-    →
+    â†’
   </b>
 </Link>
 
@@ -766,7 +768,7 @@ function AdminDashboard() {
           <div className="admin-info-card">
 
             <div className="info-card-icon">
-              👥
+              ðŸ‘¥
             </div>
 
             <div>
@@ -784,7 +786,7 @@ function AdminDashboard() {
             </div>
 
             <Link to="/admin/users">
-              Manage →
+              Manage â†’
             </Link>
 
           </div>
@@ -795,7 +797,7 @@ function AdminDashboard() {
           <div className="admin-info-card">
 
             <div className="info-card-icon">
-              📝
+              ðŸ“
             </div>
 
             <div>
@@ -813,7 +815,7 @@ function AdminDashboard() {
             </div>
 
             <Link to="/admin/tests">
-              Manage →
+              Manage â†’
             </Link>
 
           </div>
@@ -824,7 +826,7 @@ function AdminDashboard() {
           <div className="admin-info-card">
 
             <div className="info-card-icon">
-              ❓
+              â“
             </div>
 
             <div>
@@ -840,7 +842,7 @@ function AdminDashboard() {
             </div>
 
             <Link to="/admin/questions">
-              Manage →
+              Manage â†’
             </Link>
 
           </div>
@@ -855,3 +857,4 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
+

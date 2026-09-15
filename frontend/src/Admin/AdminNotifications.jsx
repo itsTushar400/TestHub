@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import "./AdminNotifications.css";
 
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AdminNotifications() {
   const [users, setUsers] = useState([]);
@@ -140,8 +140,8 @@ function AdminNotifications() {
 
       alert(
         target === "all"
-          ? "Notification sent to all students successfully! 🔔"
-          : "Notification sent to selected student successfully! 🔔"
+          ? "Notification sent to all students successfully! ðŸ””"
+          : "Notification sent to selected student successfully! ðŸ””"
       );
 
       /* RESET FORM */
@@ -171,19 +171,19 @@ function AdminNotifications() {
   const getNotificationIcon = () => {
     switch (type) {
       case "test":
-        return "📚";
+        return "ðŸ“š";
 
       case "success":
-        return "🎉";
+        return "ðŸŽ‰";
 
       case "certificate":
-        return "🏆";
+        return "ðŸ†";
 
       case "announcement":
-        return "📢";
+        return "ðŸ“¢";
 
       default:
-        return "🔔";
+        return "ðŸ””";
     }
   };
 
@@ -197,7 +197,7 @@ function AdminNotifications() {
         <div className="notification-page-header">
 
           <div className="notification-page-icon">
-            🔔
+            ðŸ””
           </div>
 
           <div className="notification-heading">
@@ -254,7 +254,7 @@ function AdminNotifications() {
                 />
 
                 <div className="target-icon">
-                  👥
+                  ðŸ‘¥
                 </div>
 
                 <div className="target-content">
@@ -294,7 +294,7 @@ function AdminNotifications() {
                 />
 
                 <div className="target-icon">
-                  👤
+                  ðŸ‘¤
                 </div>
 
                 <div className="target-content">
@@ -355,7 +355,7 @@ function AdminNotifications() {
                     >
                       {student.name ||
                         "Student"}{" "}
-                      — {student.email}
+                      â€” {student.email}
                     </option>
 
                   ))}
@@ -566,3 +566,4 @@ function AdminNotifications() {
 }
 
 export default AdminNotifications;
+

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../AdminDashboard.css";
 
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 function AllQuestions() {
   const navigate = useNavigate();
@@ -164,35 +164,35 @@ function AllQuestions() {
             to="/admin"
             className="admin-menu-item"
           >
-            📊 Dashboard
+            ðŸ“Š Dashboard
           </Link>
 
           <Link
             to="/admin/users"
             className="admin-menu-item"
           >
-            👥 Users
+            ðŸ‘¥ Users
           </Link>
 
           <Link
             to="/admin/tests"
             className="admin-menu-item"
           >
-            📝 Tests
+            ðŸ“ Tests
           </Link>
 
           <Link
             to="/admin/questions"
             className="admin-menu-item active"
           >
-            ❓ Questions
+            â“ Questions
           </Link>
 
           <Link
             to="/admin/results"
             className="admin-menu-item"
           >
-            📈 Results
+            ðŸ“ˆ Results
           </Link>
 
         </nav>
@@ -203,7 +203,7 @@ function AllQuestions() {
             to="/"
             className="view-website"
           >
-            🌐 View Website
+            ðŸŒ View Website
           </Link>
 
           <button
@@ -211,7 +211,7 @@ function AllQuestions() {
             className="admin-logout"
             onClick={handleLogout}
           >
-            🚪 Logout
+            ðŸšª Logout
           </button>
 
         </div>
@@ -244,7 +244,7 @@ function AllQuestions() {
               className="refresh-btn"
               onClick={loadData}
             >
-              🔄 Refresh
+              ðŸ”„ Refresh
             </button>
 
           </div>
@@ -257,7 +257,7 @@ function AllQuestions() {
 
           <div className="question-search-box">
 
-            <span>🔎</span>
+            <span>ðŸ”Ž</span>
 
             <input
               type="text"
@@ -302,7 +302,7 @@ function AllQuestions() {
           <div className="question-summary-card">
 
             <div className="summary-icon">
-              ❓
+              â“
             </div>
 
             <div>
@@ -322,7 +322,7 @@ function AllQuestions() {
           <div className="question-summary-card">
 
             <div className="summary-icon">
-              📚
+              ðŸ“š
             </div>
 
             <div>
@@ -342,7 +342,7 @@ function AllQuestions() {
           <div className="question-summary-card">
 
             <div className="summary-icon">
-              🔎
+              ðŸ”Ž
             </div>
 
             <div>
@@ -392,7 +392,7 @@ function AllQuestions() {
             <div className="empty-questions">
 
               <div className="empty-question-icon">
-                ❓
+                â“
               </div>
 
               <h3>
@@ -428,7 +428,7 @@ function AllQuestions() {
                         </span>
 
                         <span className="all-question-test">
-                          📚 {item.test_title}
+                          ðŸ“š {item.test_title}
                         </span>
                        <span className={`difficulty-badge ${item.difficulty?.toLowerCase() || "medium"}`}>
                        {item.difficulty || "Medium"}
@@ -441,7 +441,7 @@ function AllQuestions() {
                           handleDelete(item.id)
                         }
                       >
-                        🗑 Delete
+                        ðŸ—‘ Delete
                       </button>
 
                     </div>
@@ -526,7 +526,7 @@ function AllQuestions() {
 
                     <div className="all-correct-answer">
 
-                      ✓ Correct Answer:{" "}
+                      âœ“ Correct Answer:{" "}
 
                       <strong>
                         {item.correct_answer}
@@ -552,3 +552,4 @@ function AllQuestions() {
 }
 
 export default AllQuestions;
+

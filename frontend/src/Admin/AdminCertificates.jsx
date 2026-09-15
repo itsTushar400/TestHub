@@ -1,8 +1,8 @@
-import React, { useEffect, useMemo, useState } from "react";
+﻿import React, { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./AdminCertificates.css";
 
-const API_URL = "${import.meta.env.VITE_API_URL}";
+const API_URL = import.meta.env.VITE_API_URL || "https://testhub-backend-y450.onrender.com";
 
 const AdminCertificates = () => {
   const navigate = useNavigate();
@@ -308,13 +308,13 @@ const AdminCertificates = () => {
 
   const formatDate = (date) => {
     if (!date) {
-      return "—";
+      return "â€”";
     }
 
     const parsedDate = new Date(date);
 
     if (Number.isNaN(parsedDate.getTime())) {
-      return "—";
+      return "â€”";
     }
 
     return parsedDate.toLocaleDateString(
@@ -329,13 +329,13 @@ const AdminCertificates = () => {
 
   const formatDateTime = (date) => {
     if (!date) {
-      return "—";
+      return "â€”";
     }
 
     const parsedDate = new Date(date);
 
     if (Number.isNaN(parsedDate.getTime())) {
-      return "—";
+      return "â€”";
     }
 
     return parsedDate.toLocaleString(
@@ -373,7 +373,7 @@ const AdminCertificates = () => {
         <aside className="admin-sidebar">
 
           <div className="admin-logo">
-            🎓
+            ðŸŽ“
             <div>
               <strong>Online Test</strong>
               <span>ADMIN PANEL</span>
@@ -386,7 +386,7 @@ const AdminCertificates = () => {
               to="/admin"
               className="admin-menu-item"
             >
-              <span>📊</span>
+              <span>ðŸ“Š</span>
               Dashboard
             </Link>
 
@@ -394,7 +394,7 @@ const AdminCertificates = () => {
               to="/admin/users"
               className="admin-menu-item"
             >
-              <span>👥</span>
+              <span>ðŸ‘¥</span>
               Users
             </Link>
 
@@ -402,7 +402,7 @@ const AdminCertificates = () => {
               to="/admin/tests"
               className="admin-menu-item"
             >
-              <span>📝</span>
+              <span>ðŸ“</span>
               Tests
             </Link>
 
@@ -410,7 +410,7 @@ const AdminCertificates = () => {
               to="/admin/questions"
               className="admin-menu-item"
             >
-              <span>❓</span>
+              <span>â“</span>
               Questions
             </Link>
 
@@ -418,7 +418,7 @@ const AdminCertificates = () => {
               to="/admin/results"
               className="admin-menu-item"
             >
-              <span>📈</span>
+              <span>ðŸ“ˆ</span>
               Results
             </Link>
 
@@ -426,7 +426,7 @@ const AdminCertificates = () => {
               to="/admin/certificates"
               className="admin-menu-item active"
             >
-              <span>🏆</span>
+              <span>ðŸ†</span>
               Certificates
             </Link>
 
@@ -438,7 +438,7 @@ const AdminCertificates = () => {
               to="/"
               className="view-website"
             >
-              🌐 View Website
+              ðŸŒ View Website
             </Link>
 
             <button
@@ -446,7 +446,7 @@ const AdminCertificates = () => {
               className="admin-logout"
               onClick={handleLogout}
             >
-              🚪 Logout
+              ðŸšª Logout
             </button>
 
           </div>
@@ -486,7 +486,7 @@ const AdminCertificates = () => {
         <div className="admin-logo">
 
           <div className="admin-logo-icon">
-            🎓
+            ðŸŽ“
           </div>
 
           <div>
@@ -509,7 +509,7 @@ const AdminCertificates = () => {
             to="/admin"
             className="admin-menu-item"
           >
-            <span>📊</span>
+            <span>ðŸ“Š</span>
             Dashboard
           </Link>
 
@@ -517,7 +517,7 @@ const AdminCertificates = () => {
             to="/admin/users"
             className="admin-menu-item"
           >
-            <span>👥</span>
+            <span>ðŸ‘¥</span>
             Users
           </Link>
 
@@ -525,7 +525,7 @@ const AdminCertificates = () => {
             to="/admin/tests"
             className="admin-menu-item"
           >
-            <span>📝</span>
+            <span>ðŸ“</span>
             Tests
           </Link>
 
@@ -533,7 +533,7 @@ const AdminCertificates = () => {
             to="/admin/questions"
             className="admin-menu-item"
           >
-            <span>❓</span>
+            <span>â“</span>
             Questions
           </Link>
 
@@ -541,7 +541,7 @@ const AdminCertificates = () => {
             to="/admin/results"
             className="admin-menu-item"
           >
-            <span>📈</span>
+            <span>ðŸ“ˆ</span>
             Results
           </Link>
 
@@ -549,7 +549,7 @@ const AdminCertificates = () => {
             to="/admin/certificates"
             className="admin-menu-item active"
           >
-            <span>🏆</span>
+            <span>ðŸ†</span>
             Certificates
           </Link>
 
@@ -563,7 +563,7 @@ const AdminCertificates = () => {
             to="/"
             className="view-website"
           >
-            <span>🌐</span>
+            <span>ðŸŒ</span>
             View Website
           </Link>
 
@@ -572,7 +572,7 @@ const AdminCertificates = () => {
             className="admin-logout"
             onClick={handleLogout}
           >
-            <span>🚪</span>
+            <span>ðŸšª</span>
             Logout
           </button>
 
@@ -613,7 +613,7 @@ const AdminCertificates = () => {
               className="refresh-certificates"
               onClick={fetchCertificates}
             >
-              ↻ Refresh
+              â†» Refresh
             </button>
 
             <div className="admin-profile">
@@ -648,7 +648,7 @@ const AdminCertificates = () => {
           >
             <span>
               {messageType === "success"
-                ? "✓"
+                ? "âœ“"
                 : "!"}
             </span>
 
@@ -657,7 +657,7 @@ const AdminCertificates = () => {
             <button
               onClick={() => setMessage("")}
             >
-              ×
+              Ã—
             </button>
           </div>
         )}
@@ -671,7 +671,7 @@ const AdminCertificates = () => {
           <div className="certificate-stat-card">
 
             <div className="certificate-stat-icon total">
-              📜
+              ðŸ“œ
             </div>
 
             <div>
@@ -693,7 +693,7 @@ const AdminCertificates = () => {
           <div className="certificate-stat-card">
 
             <div className="certificate-stat-icon pending">
-              ⏳
+              â³
             </div>
 
             <div>
@@ -715,7 +715,7 @@ const AdminCertificates = () => {
           <div className="certificate-stat-card">
 
             <div className="certificate-stat-icon approved">
-              ✓
+              âœ“
             </div>
 
             <div>
@@ -737,7 +737,7 @@ const AdminCertificates = () => {
           <div className="certificate-stat-card">
 
             <div className="certificate-stat-icon rejected">
-              ✕
+              âœ•
             </div>
 
             <div>
@@ -797,7 +797,7 @@ const AdminCertificates = () => {
             <div className="certificate-search">
 
               <span>
-                🔍
+                ðŸ”
               </span>
 
               <input
@@ -816,7 +816,7 @@ const AdminCertificates = () => {
                     setSearch("")
                   }
                 >
-                  ×
+                  Ã—
                 </button>
               )}
 
@@ -869,7 +869,7 @@ const AdminCertificates = () => {
             <div className="certificate-empty">
 
               <div className="certificate-empty-icon">
-                📜
+                ðŸ“œ
               </div>
 
               <h3>
@@ -960,7 +960,7 @@ const AdminCertificates = () => {
                           <div className="certificate-id-cell">
 
                             <div className="mini-certificate-icon">
-                              🏆
+                              ðŸ†
                             </div>
 
                             <div>
@@ -1027,7 +1027,7 @@ const AdminCertificates = () => {
                             <small>
                               Test ID:{" "}
                               {certificate.test_id ||
-                                "—"}
+                                "â€”"}
                             </small>
 
                           </div>
@@ -1069,7 +1069,7 @@ const AdminCertificates = () => {
 
                           <span className="grade-badge">
                             {certificate.grade ||
-                              "—"}
+                              "â€”"}
                           </span>
 
                         </td>
@@ -1116,7 +1116,7 @@ const AdminCertificates = () => {
                               certificate.auto_approved
                             ) === 1 && (
                               <small className="auto-approved-label">
-                                ⚡ Auto Approved
+                                âš¡ Auto Approved
                               </small>
                             )}
 
@@ -1157,7 +1157,7 @@ const AdminCertificates = () => {
                                 {actionLoading ===
                                 certificate.id
                                   ? "..."
-                                  : "✓ Approve"}
+                                  : "âœ“ Approve"}
                               </button>
 
                               <button
@@ -1176,7 +1176,7 @@ const AdminCertificates = () => {
                                 {actionLoading ===
                                 certificate.id
                                   ? "..."
-                                  : "✕ Reject"}
+                                  : "âœ• Reject"}
                               </button>
 
                             </div>
@@ -1186,8 +1186,8 @@ const AdminCertificates = () => {
                             <span className="action-completed">
                               {certificate.status ===
                               "Approved"
-                                ? "✓ Approved"
-                                : "✕ Rejected"}
+                                ? "âœ“ Approved"
+                                : "âœ• Rejected"}
                             </span>
 
                           )}
@@ -1218,7 +1218,7 @@ const AdminCertificates = () => {
           <div className="certificate-info-card">
 
             <div className="info-icon">
-              💡
+              ðŸ’¡
             </div>
 
             <div>
@@ -1243,7 +1243,7 @@ const AdminCertificates = () => {
           <div className="certificate-info-card">
 
             <div className="info-icon">
-              ⚡
+              âš¡
             </div>
 
             <div>
@@ -1274,3 +1274,4 @@ const AdminCertificates = () => {
 };
 
 export default AdminCertificates;
+
