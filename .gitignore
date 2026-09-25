@@ -1,5 +1,6 @@
-
-# Environment variables
+backend/.env
 .env
 .env.*
-!.env.example
+frontend/.env
+node_modules/
+dist/
