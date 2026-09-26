@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./ForgotPassword.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const ForgotPassword = () => {
   const navigate = useNavigate();
 
@@ -32,18 +34,15 @@ const ForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/forgot-password",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email.trim(),
-          }),
-        }
-      );
+      const response = await fetch(`${API_URL}/api/forgot-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+        }),
+      });
 
       const data = await response.json();
 
@@ -87,19 +86,16 @@ const ForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/verify-otp",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email.trim(),
-            otp: otp.trim(),
-          }),
-        }
-      );
+      const response = await fetch(`${API_URL}/api/verify-otp`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          otp: otp.trim(),
+        }),
+      });
 
       const data = await response.json();
 
@@ -151,20 +147,17 @@ const ForgotPassword = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "${import.meta.env.VITE_API_URL}/api/reset-password",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email.trim(),
-            password: password,
-            confirmPassword: confirmPassword,
-          }),
-        }
-      );
+      const response = await fetch(`${API_URL}/api/reset-password`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          password: password,
+          confirmPassword: confirmPassword,
+        }),
+      });
 
       const data = await response.json();
 
