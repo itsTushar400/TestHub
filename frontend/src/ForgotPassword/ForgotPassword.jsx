@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./ForgotPassword.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://testhub-backend-y450.onrender.com";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
